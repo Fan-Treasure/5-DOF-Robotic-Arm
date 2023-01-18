@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="机械臂2.0">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0055142 0.054638 -0.11085"
+        rpy="0 0 0" />
+      <mass
+        value="1.4919" />
+      <inertia
+        ixx="0.012304"
+        ixy="2.35E-06"
+        ixz="2.2552E-07"
+        iyy="0.014067"
+        iyz="0.00012458"
+        izz="0.0047087" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_link">
+    <inertial>
+      <origin
+        xyz="5.6108E-09 0.020745 0.00049007"
+        rpy="0 0 0" />
+      <mass
+        value="0.035504" />
+      <inertia
+        ixx="1.1871E-05"
+        ixy="1.275E-12"
+        ixz="-2.7047E-12"
+        iyy="2.2937E-05"
+        iyz="1.5015E-13"
+        izz="1.3307E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_pan_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.1438 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="upper_arm_link">
+    <inertial>
+      <origin
+        xyz="-0.0034341 0.098226 -0.0029774"
+        rpy="0 0 0" />
+      <mass
+        value="0.29531" />
+      <inertia
+        ixx="0.00059426"
+        ixy="7.0346E-07"
+        ixz="6.4701E-06"
+        iyy="0.00026669"
+        iyz="-1.1142E-06"
+        izz="0.00061027" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/upper_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/upper_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_lift_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.069 0"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder_link" />
+    <child
+      link="upper_arm_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="forearm_link">
+    <inertial>
+      <origin
+        xyz="0.0033703 0.13456 -0.0030421"
+        rpy="0 0 0" />
+      <mass
+        value="0.29576" />
+      <inertia
+        ixx="0.0005951"
+        ixy="6.0121E-07"
+        ixz="-6.5745E-06"
+        iyy="0.00026672"
+        iyz="1.8251E-06"
+        izz="0.00061117" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/forearm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/forearm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.25165 0"
+      rpy="0 0 0" />
+    <parent
+      link="upper_arm_link" />
+    <child
+      link="forearm_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist_link">
+    <inertial>
+      <origin
+        xyz="-8.6065E-05 0.050469 0.0016337"
+        rpy="0 0 0" />
+      <mass
+        value="0.087097" />
+      <inertia
+        ixx="2.4015E-05"
+        ixy="-2.9344E-08"
+        ixz="-5.6666E-12"
+        iyy="1.9382E-05"
+        iyz="-6.9041E-07"
+        izz="2.108E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.25165 0"
+      rpy="0 0 0" />
+    <parent
+      link="forearm_link" />
+    <child
+      link="wrist_link" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="ee_link">
+    <inertial>
+      <origin
+        xyz="2.5019E-05 0.068518 1.2398E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.11408" />
+      <inertia
+        ixx="2.5359E-05"
+        ixy="3.0406E-10"
+        ixz="1.0217E-10"
+        iyy="2.8035E-05"
+        iyz="-2.1178E-12"
+        izz="2.5365E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/ee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://机械臂2.0/meshes/ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ee_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.11045 0"
+      rpy="0 0 0" />
+    <parent
+      link="wrist_link" />
+    <child
+      link="ee_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
